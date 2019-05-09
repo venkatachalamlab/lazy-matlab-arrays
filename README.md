@@ -29,6 +29,8 @@ If your transformations take some time, and you make repeated requests from the 
     > C = CachedArray(B)
     > get_slice(C, 30); % super slow
     > get_slice(C, 30); % super fast
+    > C(:,:,:,:,5:9); % 5 x super slow
+    > C(:,:,:,:,5:9); % super fast
 
 While these arrays can often be handled by built-in functions, they don't support the full functionality of built-in arrays. Most notably, they cannot be written to (immutable by design). If you ever need to convert them to a standard in-memory array, use `get_array_data`:
 
